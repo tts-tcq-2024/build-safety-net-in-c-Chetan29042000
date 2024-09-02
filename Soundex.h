@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include <string.h>
 
+
 char getSoundexCode(char c) {
     c = toupper(c);
     switch (c) {
