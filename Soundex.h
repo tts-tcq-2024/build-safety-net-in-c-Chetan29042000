@@ -7,10 +7,7 @@
 
 char getSoundexCode(char c) {
     c = toupper(c);
-	(strchr("BFPV", c))? return '1' : (strchr("CGJKQSXZ", c)) ?  return '2' : (strchr("DT", c))? return '3' : (c == 'L')? return '4' : (strchr("MN", c)) ? return '5' : (c == 'R') ? return '6' : return '0'  ;
-   	
-	
-	
+    (strchr("BFPV", c)) ? return '1' : (strchr("CGJKQSXZ", c)) ?  return '2' : (strchr("DT", c))? return '3' : (c == 'L') ? return '4' : (strchr("MN", c)) ? return '5' : (c == 'R') ? return '6' : return '0';	
 }
 
 int shouldAddCode(char code, char previousCode) {
