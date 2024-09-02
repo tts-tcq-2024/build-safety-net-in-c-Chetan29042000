@@ -13,9 +13,7 @@ char getSoundexCode(char c) {
    if (c == 'L') return '4';
    if (strchr("MN", c)) return '5';
    if (c == 'R') return '6';
-   return '0'; // For A, E, I, O, U, H, W, Y
-	
-	
+   return '0'; // For A, E, I, O, U, H, W, Y	
 }
 
 int shouldAddCode(char code, char previousCode) {
