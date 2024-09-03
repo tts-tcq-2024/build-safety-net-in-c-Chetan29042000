@@ -5,15 +5,31 @@
 #include <ctype.h>
 #include <string.h>
 
+char getCodeForGroup1(char c) {
+    if (strchr("BFPV", c)) return '1';
+	if (strchr("CGJKQSXZ", c)) return '2';
+    return '0';
+}
+
+char getCodeForGroup2(char c) {
+    if (strchr("DT", c)) return '3';
+    if (c == 'L') return '4';
+    return '0';
+}
+
+char getCodeForGroup3(char c) {
+    if (strchr("MN", c)) return '5';
+    if (c == 'R') return '6';
+    return '0';
+}
+
 char getSoundexCode(char c) {
     c = toupper(c);
-   if (strchr("BFPV", c)) return '1';
-   if (strchr("CGJKQSXZ", c)) return '2';
-   if (strchr("DT", c)) return '3';
-   if (c == 'L') return '4';
-   if (strchr("MN", c)) return '5';
-   if (c == 'R') return '6';
-   return '0'; // For A, E, I, O, U, H, W, Y	
+
+    char code = getCodeForGroup1(c);
+    if (code != '0') return code;
+
+    return (code = getCodeForGroup2(c)) != '0' ? code : getCodeForGroup3(c);
 }
 
 int shouldAddCode(char code, char previousCode) {
