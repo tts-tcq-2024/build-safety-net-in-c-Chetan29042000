@@ -37,6 +37,13 @@ int shouldAddCode(char code, char previousCode) {
 }
 
 
+void fillRemainingWithZeros(char *soundex, int *sIndex) {
+    while (*sIndex < 4) {
+        soundex[(*sIndex)++] = '0';
+    }
+    soundex[4] = '\0';
+}
+
 void generateSoundex(const char *name, char *soundex) {
     soundex[0] = toupper(name[0]);
     int sIndex = 1;
@@ -44,18 +51,12 @@ void generateSoundex(const char *name, char *soundex) {
 
     for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
-        // Combine the shouldAddCode logic into the for loop condition
-        if (code != '0' && code != soundex[sIndex - 1]) {
+        if (shouldAddCode(code, soundex[sIndex - 1])) {
             soundex[sIndex++] = code;
         }
     }
 
-    // Eliminate the need for a separate function to fill zeros
-    while (sIndex < 4) {
-        soundex[sIndex++] = '0';
-    }
-
-    soundex[4] = '\0';
+    fillRemainingWithZeros(soundex, &sIndex);
 }
 
 #endif // SOUNDEX_H
