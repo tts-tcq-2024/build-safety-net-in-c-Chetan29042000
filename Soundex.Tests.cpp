@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include "Soundex.h"
 
 // Declaration of the function under test
 void generateSoundex(const char *name, char *soundex);
