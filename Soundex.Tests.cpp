@@ -1,5 +1,8 @@
 #include <gtest/gtest.h>
 #include "Soundex.h"
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
 
 void test_generateSoundex() {
     char soundex[5];
@@ -29,6 +32,5 @@ void test_generateSoundex() {
 
 int main() {
     test_generateSoundex();
-    printf("All tests passed successfully!\n");
     return 0;
 }
