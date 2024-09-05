@@ -7,7 +7,7 @@
 
 char getCodeForGroup1(char c) {
     if (strchr("BFPV", c)) return '1';
-	if (strchr("CGJKQSXZ", c)) return '2';
+    if (strchr("CGJKQSXZ", c)) return '2';
     return '0';
 }
 
