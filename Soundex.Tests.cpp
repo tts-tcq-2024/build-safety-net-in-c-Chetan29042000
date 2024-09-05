@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "Soundex.h"
 
-// Forward declaration of generateSoundex function (assume it's implemented elsewhere)
+// Forward declaration of generateSoundex function
 void generateSoundex(const char *name, char *soundex);
 
 // Helper function to verify Soundex generation
