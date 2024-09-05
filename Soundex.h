@@ -5,42 +5,27 @@
 #include <ctype.h>
 #include <string.h>
 
-char getCodeForGroup1(char c) {
-    if (strchr("BFPV", c)) return '1';
-    if (strchr("CGJKQSXZ", c)) return '2';
-    return '0';
-}
+// Define the mapping for Soundex codes
+const char soundexMapping[26] = {
+    '0', '1', '2', '3', '0', '1', '2', '0', '0', '2', // A-J 
+    '2', '4', '5', '5', '0', '1', '2', '6', '2', '3', // K-T
+    '0', '1', '0', '2', '0', '2'  // U-Z
+};
 
-char getCodeForGroup2(char c) {
-    if (strchr("DT", c)) return '3';
-    if (c == 'L') return '4';
-    return '0';
-}
-
-char getCodeForGroup3(char c) {
-    if (strchr("MN", c)) return '5';
-    if (c == 'R') return '6';
-    return '0';
-}
-
+// Function to get the Soundex code for a character
 char getSoundexCode(char c) {
     c = toupper(c);
-
-    char code = getCodeForGroup1(c);
-    if (code != '0') return code;
-
-    return (code = getCodeForGroup2(c)) != '0' ? code : getCodeForGroup3(c);
-}
-
-int shouldAddCode(char code, char previousCode) {
-    return code != '0' && code != previousCode;
+    if (c >= 'A' && c <= 'Z') {
+        return soundexMapping[c - 'A']; // Map letter to code
+    }
+    return '0'; // For non-alphabet characters
 }
 
 void fillRemainingWithZeros(char *soundex, int *sIndex) {
     while (*sIndex < 4) {
-        soundex[(*sIndex)++] = '0';
+        soundex[(*sIndex)++] = '0'; // Fill remaining with zeros
     }
-    soundex[4] = '\0';
+    soundex[4] = '\0'; // Null terminate the string
 }
 
 void addCharacterIfValid(char code, char previousCode, char *soundex, int *sIndex) {
@@ -56,15 +41,12 @@ void processCharacter(const char *name, char *soundex, int *sIndex, int len) {
     }
 }
 
+
 void generateSoundex(const char *name, char *soundex) {
-    soundex[0] = toupper(name[0]);
+    soundex[0] = toupper(name[0]); // Set the first letter
     int sIndex = 1;
     int len = strlen(name);
 
-    // Move the loop and if statement into a helper function
-    processCharacter(name, soundex, &sIndex, len);
-
+    processNameCharacters(name, soundex, &sIndex, len);
     fillRemainingWithZeros(soundex, &sIndex);
 }
-
-#endif // SOUNDEX_H
