@@ -43,17 +43,22 @@ void fillRemainingWithZeros(char *soundex, int *sIndex) {
     soundex[4] = '\0';
 }
 
+void processCharacter(const char *name, char *soundex, int *sIndex, int len) {
+    for (int i = 1; i < len && *sIndex < 4; i++) {
+        char code = getSoundexCode(name[i]);
+        if (shouldAddCode(code, soundex[*sIndex - 1])) {
+            soundex[(*sIndex)++] = code;
+        }
+    }
+}
+
 void generateSoundex(const char *name, char *soundex) {
     soundex[0] = toupper(name[0]);
     int sIndex = 1;
     int len = strlen(name);
 
-    for (int i = 1; i < len && sIndex < 4; i++) {
-        char code = getSoundexCode(name[i]);
-        if (shouldAddCode(code, soundex[sIndex - 1])) {
-            soundex[sIndex++] = code;
-        }
-    }
+    // Move the loop and if statement into a helper function
+    processCharacter(name, soundex, &sIndex, len);
 
     fillRemainingWithZeros(soundex, &sIndex);
 }
