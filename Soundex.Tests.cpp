@@ -10,7 +10,7 @@ void generateSoundex(const char *name, char *soundex);
 void verifySoundex(const char *input, const char *expected) {
     char soundex[5];
     generateSoundex(input, soundex);
-   // assert(strcmp(soundex, expected) == 0);
+    assert(strcmp(soundex, expected) == 0);
     printf("Test passed for input: %s -> %s\n", input, soundex);
 }
 
