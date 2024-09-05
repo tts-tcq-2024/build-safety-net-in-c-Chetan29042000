@@ -43,12 +43,16 @@ void fillRemainingWithZeros(char *soundex, int *sIndex) {
     soundex[4] = '\0';
 }
 
+void addCharacterIfValid(char code, char previousCode, char *soundex, int *sIndex) {
+    if (shouldAddCode(code, previousCode)) {
+        soundex[(*sIndex)++] = code;
+    }
+}
+
 void processCharacter(const char *name, char *soundex, int *sIndex, int len) {
     for (int i = 1; i < len && *sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
-        if (shouldAddCode(code, soundex[*sIndex - 1])) {
-            soundex[(*sIndex)++] = code;
-        }
+        addCharacterIfValid(code, soundex[*sIndex - 1], soundex, sIndex);
     }
 }
 
