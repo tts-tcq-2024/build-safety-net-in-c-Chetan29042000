@@ -28,7 +28,7 @@ void test_generateSoundex() {
 }
 
 int main() {
-    test_getSoundexCode();
+    test_generateSoundex();
     printf("All tests passed successfully!\n");
     return 0;
 }
