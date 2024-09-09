@@ -14,17 +14,9 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  generateSoundex("Ashcraft", soundex);
  ASSERT_STREQ(soundex,"A261");
  
- // // Name with similar consonants
- // generateSoundex("Tymczak", soundex);
- // ASSERT_STREQ(soundex,"T522");
-
  // Single character
  generateSoundex("A", soundex);
  ASSERT_STREQ(soundex,"A000");
-
- // Empty string
- // generateSoundex("", soundex);
- // ASSERT_STREQ(soundex,"0000");
 
  // Starts with vowel
  generateSoundex("Euler", soundex);
@@ -33,10 +25,6 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
 // Short name with no changes
  generateSoundex("Lee", soundex);
  ASSERT_STREQ(soundex,"L000");
- 
-// Starts with silent letters
- // generateSoundex("Pneumonia", soundex);
- // ASSERT_STREQ(soundex,"P555");
 
  // Name with special character '@'
  generateSoundex("B@rton", soundex);
