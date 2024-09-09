@@ -6,40 +6,40 @@
 
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  char soundex[5];
- // Common name
+ // Testcase 1: Common name
  generateSoundex("Robert", soundex); 
  ASSERT_STREQ(soundex,"R163");
  
- // Name with different consonants
+ // Testcase 2: Name with different consonants
  generateSoundex("Ashcraft", soundex);
  ASSERT_STREQ(soundex,"A261");
  
- // Single character
+ // Testcase 3: Single character
  generateSoundex("A", soundex);
  ASSERT_STREQ(soundex,"A000");
 
- // Starts with vowel
+ // Testcase 4: Starts with vowel
  generateSoundex("Euler", soundex);
  ASSERT_STREQ(soundex,"E460");
  
-// Short name with no changes
+// Testcase 5: Short name with no changes
  generateSoundex("Lee", soundex);
  ASSERT_STREQ(soundex,"L000");
 
- // Name with special character '@'
+ // Testcase 6: Name with special character '@'
  generateSoundex("B@rton", soundex);
  ASSERT_STREQ(soundex,"B635");
 
- // Name with apostrophe
+ // Testcase 7: Name with apostrophe
  generateSoundex("O'Connor", soundex);
  ASSERT_STREQ(soundex,"O256");
 
- // Name with apostrophe and multiple names
+ // Testcase 8: Name with apostrophe and multiple names
  generateSoundex("D'Artagnan", soundex);
  ASSERT_STREQ(soundex,"D632");
 
 
- // Name with repeating 'D'
+ // Testcase 9: Name with repeating 'D'
  generateSoundex("Addams", soundex);
  ASSERT_STREQ(soundex,"A352");
  
