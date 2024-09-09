@@ -9,6 +9,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  // Common name
  generateSoundex("Robert", soundex); 
  ASSERT_STREQ(soundex,"R163");
+ 
  // Name with different consonants
  generateSoundex("Ashcraft", soundex);
  ASSERT_STREQ(soundex,"A261");
@@ -56,8 +57,5 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  // Name with repeating 'D'
  generateSoundex("Addams", soundex);
  ASSERT_STREQ(soundex,"A352");
-}
-int main() {
-    test_typicalNames();
-    return 0;
+ 
 }
