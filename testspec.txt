@@ -1,1 +1,59 @@
+Objective: To validate the generateSoundex function with multiple test cases that cover a variety of scenarios, including names with different consonants, vowels, special characters, and apostrophes, ensuring the function returns the correct 4-character Soundex code.
+
+Test Cases 1: Common Name
+Input Name: "Robert"
+Test Function: generateSoundex("Robert", soundex)
+Expected Output: "R163"
+
+Test Case 2: Name with Different Consonants
+Input Name: "Ashcraft"
+Test Function: generateSoundex("Ashcraft", soundex)
+Expected Output: "A261"
+
+Test Case 3: Single Character
+Input Name: "A"
+Test Function: generateSoundex("A", soundex)
+Expected Output: "A000"
+
+Test Case 4: Name Starting with a Vowel
+Input Name: "Euler"
+Test Function: generateSoundex("Euler", soundex)
+Expected Output: "E460"
+
+Test Case 5: Short Name with No Changes
+Input Name: "Lee"
+Test Function: generateSoundex("Lee", soundex)
+Expected Output: "L000"
+
+Test Case 6: Name with Special Character
+Input Name: "B@rton"
+Test Function: generateSoundex("B@rton", soundex)
+Expected Output: "B635"
+
+Test Case 7: Name with Apostrophe
+Input Name: "O'Connor"
+Test Function: generateSoundex("O'Connor", soundex)
+Expected Output: "O256"
+
+Test Case 8: Name with Apostrophe and Multiple Parts
+Input Name: "D'Artagnan"
+Test Function: generateSoundex("D'Artagnan", soundex)
+Expected Output: "D632"
+
+Test Case 9: Name with Repeating Letters
+Input Name: "Addams"
+Test Function: generateSoundex("Addams", soundex)
+Expected Output: "A352"
+
+Test Procedures:
+Setup: Initialize a character array soundex[5] to store the generated Soundex code.
+Execution: For each test case, call the generateSoundex function with the given input name and store the result in soundex.
+Validation: Use ASSERT_STREQ to compare the generated Soundex code with the expected output for each test case.
+Result: Mark the test as Pass if the generated Soundex code matches the expected output. Otherwise, mark it as Fail.
+
+Expected Results:
+The generateSoundex function should correctly handle common names, names with vowels, special characters, and apostrophes.
+Names with fewer than 4 characters should be padded with zeros.
+Non-alphabetic characters should be ignored, while alphabetic characters should be processed according to the Soundex rules.
+The function should always return a 4-character Soundex code.
 
