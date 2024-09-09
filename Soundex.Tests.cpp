@@ -9,7 +9,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  // Common name
  generateSoundex("Robert", soundex); 
  ASSERT_STREQ(soundex,"R163");
-/ Name with different consonants
+ // Name with different consonants
  generateSoundex("Ashcraft", soundex);
  ASSERT_STREQ(soundex,"A261");
  
@@ -45,7 +45,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  generateSoundex("O'Connor", soundex);
  ASSERT_STREQ(soundex,"O256");
 
-// Name with apostrophe and multiple names
+ // Name with apostrophe and multiple names
  generateSoundex("D'Artagnan", soundex);
  ASSERT_STREQ(soundex,"D632");
 
