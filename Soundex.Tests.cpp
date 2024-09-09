@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include "Soundex.h"
 
 void testSoundex(const char *name, const char *expected) {
     char soundex[5];
