@@ -38,9 +38,6 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  generateSoundex("D'Artagnan", soundex);
  ASSERT_STREQ(soundex,"D632");
 
- // Name with repeating 'L'
- // generateSoundex("Lloyd", soundex);
- // ASSERT_STREQ(soundex,"L300");
 
  // Name with repeating 'D'
  generateSoundex("Addams", soundex);
