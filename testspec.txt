@@ -1,48 +1,39 @@
 Objective: To validate the generateSoundex function with multiple test cases that cover a variety of scenarios, including names with different consonants, vowels, special characters, and apostrophes, ensuring the function returns the correct 4-character Soundex code.
 
-Test Cases 1: Common Name
+Test Case 1: Common Name Soundex Conversion
 Input Name: "Robert"
-Test Function: generateSoundex("Robert", soundex)
 Expected Output: "R163"
 
-Test Case 2: Name with Different Consonants
+Test Case 2: Name with Different Consonants Soundex Conversion
 Input Name: "Ashcraft"
-Test Function: generateSoundex("Ashcraft", soundex)
 Expected Output: "A261"
 
-Test Case 3: Single Character
+Test Case 3: Single Character Name Soundex Conversion
 Input Name: "A"
-Test Function: generateSoundex("A", soundex)
 Expected Output: "A000"
 
-Test Case 4: Name Starting with a Vowel
+Test Case 4: Name Starting with a Vowel Soundex Conversion
 Input Name: "Euler"
-Test Function: generateSoundex("Euler", soundex)
 Expected Output: "E460"
 
-Test Case 5: Short Name with No Changes
+Test Case 5: Short Name with No Changes in Soundex Conversion
 Input Name: "Lee"
-Test Function: generateSoundex("Lee", soundex)
 Expected Output: "L000"
 
-Test Case 6: Name with Special Character
+Test Case 6: Name with Special Characters in Soundex Conversion
 Input Name: "B@rton"
-Test Function: generateSoundex("B@rton", soundex)
 Expected Output: "B635"
 
-Test Case 7: Name with Apostrophe
+Test Case 7: Name with Apostrophe in Soundex Conversion
 Input Name: "O'Connor"
-Test Function: generateSoundex("O'Connor", soundex)
 Expected Output: "O256"
 
-Test Case 8: Name with Apostrophe and Multiple Parts
+Test Case 8: Multi-Part Name with Apostrophe in Soundex Conversion
 Input Name: "D'Artagnan"
-Test Function: generateSoundex("D'Artagnan", soundex)
 Expected Output: "D632"
 
-Test Case 9: Name with Repeating Letters
+Test Case 9: Name with Repeating Letters in Soundex Conversion
 Input Name: "Addams"
-Test Function: generateSoundex("Addams", soundex)
 Expected Output: "A352"
 
 Test Procedures:
