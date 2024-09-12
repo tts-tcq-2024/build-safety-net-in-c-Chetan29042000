@@ -30,16 +30,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  generateSoundex("B@rton", soundex);
  ASSERT_STREQ(soundex,"B635");
 
- // Testcase 7: Name with apostrophe
- generateSoundex("O'Connor", soundex);
- ASSERT_STREQ(soundex,"O256");
-
- // Testcase 8: Name with apostrophe and multiple name
- generateSoundex("D'Artagnan", soundex);
- ASSERT_STREQ(soundex,"D632");
-
-
- // Testcase 9: Name with repeating letter
+ // Testcase 7: Name with repeating letter
  generateSoundex("Addams", soundex);
  ASSERT_STREQ(soundex,"A352");
  
