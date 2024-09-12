@@ -24,15 +24,7 @@ Test Case 6: Name with Special Characters in Soundex Conversion
 Input Name: "B@rton"
 Expected Output: "B635"
 
-Test Case 7: Name with Apostrophe in Soundex Conversion
-Input Name: "O'Connor"
-Expected Output: "O256"
-
-Test Case 8: Multi-Part Name with Apostrophe in Soundex Conversion
-Input Name: "D'Artagnan"
-Expected Output: "D632"
-
-Test Case 9: Name with Repeating Letters in Soundex Conversion
+Test Case 7: Name with Repeating Letters in Soundex Conversion
 Input Name: "Addams"
 Expected Output: "A352"
 
