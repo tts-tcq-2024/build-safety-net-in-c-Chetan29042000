@@ -18,7 +18,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  generateSoundex("A", soundex);
  ASSERT_STREQ(soundex,"A000");
 
- // Testcase 4: Starts with vowel
+ // Testcase 4: name Starts with vowel
  generateSoundex("Euler", soundex);
  ASSERT_STREQ(soundex,"E460");
  
@@ -34,12 +34,12 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  generateSoundex("O'Connor", soundex);
  ASSERT_STREQ(soundex,"O256");
 
- // Testcase 8: Name with apostrophe and multiple names
+ // Testcase 8: Name with apostrophe and multiple name
  generateSoundex("D'Artagnan", soundex);
  ASSERT_STREQ(soundex,"D632");
 
 
- // Testcase 9: Name with repeating 'D'
+ // Testcase 9: Name with repeating character
  generateSoundex("Addams", soundex);
  ASSERT_STREQ(soundex,"A352");
  
