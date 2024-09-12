@@ -39,7 +39,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  ASSERT_STREQ(soundex,"D632");
 
 
- // Testcase 9: Name with repeating character
+ // Testcase 9: Name with repeating letter
  generateSoundex("Addams", soundex);
  ASSERT_STREQ(soundex,"A352");
  
